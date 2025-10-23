@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Integración de Páginas Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: #ffc0cb;
+        }
+        .header {
+            background: #ffb6c1;
+            padding: 20px 0 10px 0;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.2em;
+            color: #a23c66;
+        }
+        .autores {
+            font-size: 1.1em;
+            color: #8a3e5c;
+            margin-bottom: 20px;
+        }
+        .menu-container {
+            margin: 30px auto 10px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+        }
+        select {
+            font-size: 16px;
+            padding: 7px 16px;
+            border-radius: 6px;
+            border: 1px solid #a23c66;
+            background: #fff0f5;
+        }
+        button {
+            margin: 0 10px;
+            padding: 10px 22px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 7px;
+            border: none;
+            background: #ff69b4;
+            color: white;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #c2185b;
+        }
+        iframe {
+            width: 90%;
+            height: 600px;
+            margin-top: 20px;
+            border: 2px solid #a23c66;
+            border-radius: 8px;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Explora las siguientes páginas</h1>
+        <div class="autores">
+            Creado por Juliana Carmona y Valeria Avendaño 10-1
+        </div>
+    </div>
+
+    <div class="menu-container">
+        <label for="menuPaginas"><b>Selecciona la página:</b></label>
+        <select id="menuPaginas">
+            <option value="">-- Selecciona una opción --</option>
+            <option value="FORMULARIO.html">Formulario</option>
+            <option value="memory%20game.html">Juego</option>
+            <option value="glow%20girls.html">Principal</option>
+        </select>
+        <button onclick="abrirSeleccion()">Abrir</button>
+    </div>
+
+    <iframe id="visor" src="" title="Visor de páginas"></iframe>
+
+    <script>
+        function abrirSeleccion() {
+            const menu = document.getElementById('menuPaginas');
+            const url = menu.value;
+            if (url) {
+                document.getElementById('visor').src = url;
+            }
+        }
+        document.getElementById('menuPaginas').addEventListener('change', abrirSeleccion);
+    </script>
+
+</body>
+</html>
